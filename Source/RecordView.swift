@@ -315,6 +315,8 @@ public class RecordView: UIView, CAAnimationDelegate {
     private func onFinish(recordButton: RecordButton) {
         isSwiped = false
         isLockRecord = false
+        recordButton.isUserInteractionEnabled = false
+        recordButton.isUserInteractionEnabled = true
         cancelActionButton.isHidden = true
         if lockdownView != nil {
             lockdownView.isHidden = true
