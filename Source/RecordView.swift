@@ -351,7 +351,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     //this will be called when user starts to move his finger
     func touchMoved(recordButton: RecordButton, sender: UIPanGestureRecognizer) {
 
-        if isSwiped {
+        if isSwiped || isLockRecord {
             return
         }
 
