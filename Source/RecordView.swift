@@ -266,7 +266,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     
     //this will be called when user swipes to the left and cancel the record
     private func onLockRecord(recordButton: RecordButton) {
-        slideToCancelStackVIew.subviews.forEach { $0.isHidden = true }
+        slideToCancelStackVIew.isHidden = true
         isLockRecord = true
         lockdownView.isHidden = true
         cancelActionButton.isHidden = false
@@ -281,6 +281,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     @objc private func onSwipe(recordButton: RecordButton) {
         isSwiped = true
         isLockRecord = false
+        cancelActionButton.isHidden = true
 
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             recordButton.transform = .identity
@@ -314,6 +315,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     private func onFinish(recordButton: RecordButton) {
         isSwiped = false
         isLockRecord = false
+        cancelActionButton.isHidden = true
         if lockdownView != nil {
             lockdownView.isHidden = true
         }
