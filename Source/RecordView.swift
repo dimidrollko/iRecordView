@@ -232,6 +232,8 @@ public class RecordView: UIView, CAAnimationDelegate {
         resetTimer()
         if lockdownView == nil {
             lockdownView = createLockRecordView(recordButton: recordButton)
+        } else {
+            lockdownView.isHidden = false
         }
         isSwiped = false
         //start timer
